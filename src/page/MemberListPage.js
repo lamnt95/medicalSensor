@@ -1,8 +1,9 @@
 import React from "react"
 import withPanel from "../layout/withPanel"
+import MemberListScreen from "../screens/MemberListScreen"
 
 function MemberListPage() {
-  return <div>MemberListPage</div>
+  return <MemberListScreen />
 }
 
 export default withPanel()(MemberListPage);
