@@ -1,22 +1,29 @@
 import React from "react";
 
-export default function Pagination() {
+export default function Pagination(props) {
+  const { showFileDownload, showAllDowlload, showExcelDownload } = props;
   return <div className="card card-custom">
     <div className="card-body py-7">
       <div className="d-flex justify-content-between align-items-center flex-wrap">
         <div className="d-flex">
-          <a href="#" className="btn btn-primary font-weight-bold btn-sm px-3 font-size-base mr-10 d-flex align-items-center">
+          {showFileDownload && <a href="#" className="btn btn-primary font-weight-bold btn-sm px-3 font-size-base mr-10 d-flex align-items-center">
             <i class="fa fa-file-download mr-2"></i>
             <span>
               선택 다운로드
             </span>
-          </a>
-          <a href="#" className="btn btn-primary font-weight-bold btn-sm px-3 font-size-base d-flex align-items-center">
+          </a>}
+          {showAllDowlload && <a href="#" className="btn btn-primary font-weight-bold btn-sm px-3 font-size-base d-flex align-items-center">
             <i class="fa fa-download mr-2"></i>
             <span>
               전체 다운로드
             </span>
-          </a>
+          </a>}
+          {showExcelDownload && <a href="#" className="btn btn-primary font-weight-bold btn-sm px-3 font-size-base d-flex align-items-center">
+            <i class="far fa-file-excel mr-2"></i>
+            <span>
+              엑셀다운로드
+            </span>
+          </a>}
         </div>
         <div className="d-flex">
           <div className="d-flex flex-wrap mr-3">

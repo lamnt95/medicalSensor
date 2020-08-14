@@ -10,7 +10,7 @@ export default function MemberListScreen() {
     <MemberSubHeader />
     <div className="d-flex pl-8 pr-8 flex-column">
       <MemberList />
-      <Pagination />
+      <Pagination showFileDownload showAllDowlload />
     </div>
   </>
 }
