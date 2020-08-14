@@ -1,42 +1,36 @@
 import _ from 'lodash'
 import React from "react"
-// import { useHistory, useLocation, useParams } from "react-router-dom"
+import { useHistory, useLocation, useParams } from "react-router-dom"
 
 const menu = [
   {
-    id: "order",
-    title: "Đơn hàng",
-    path: "/order"
+    id: "member",
+    title: "회원관리",
+    path: "/member",
+    icon: "users"
   },
   {
-    id: "product",
-    title: "Sản phẩm",
-    path: "/product"
+    id: "statisticalData",
+    title: "통계데이타 관리",
+    path: "/statisticalData",
+    icon: "table"
   },
   {
-    id: "category",
-    title: "Loại Sản phẩm",
-    path: "/category"
+    id: "basicStatistics",
+    title: "기본 통계",
+    path: "/basicStatistics",
+    icon: "dice-d6"
   },
   {
-    id: "post",
-    title: "Bài viết",
-    path: "/post"
-  },
-  {
-    id: "employee",
-    title: "Nhân viên",
-    path: "/employee"
-  },
-  {
-    id: "setup",
-    title: "Cài đặt",
-    path: "/setup"
-  },
+    id: "comprehensiveStatistics",
+    title: "종합 통계",
+    path: "/comprehensiveStatistics",
+    icon: "dice-d20"
+  }
 ]
 
 function MenuItem(props) {
-  const { title, path, isActive } = props || {}
+  const { title, path, isActive, icon } = props || {}
   // const router = useHistory();
 
   const onClickItem = () => {
@@ -44,8 +38,10 @@ function MenuItem(props) {
     // router.push(path)
   }
   const liClass = isActive ? "menu-item menu-item-active" : "menu-item"
+  const iconClass = `fa fa-${icon || ""} text-primary icon-md`
   return <li className={liClass} aria-haspopup="true" onClick={onClickItem}>
     <a className="menu-link">
+      <i className={iconClass}></i>
       <span className="svg-icon menu-icon">
       </span>
       <span className="menu-text">{title}</span>
@@ -54,13 +50,12 @@ function MenuItem(props) {
 }
 
 export default function Menu() {
-  // const location = useLocation() || {};
-  // const { pathname } = location
-  const pathname = ""
+  const location = useLocation() || {};
+  const { pathname } = location
   return <div className="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
     <div id="kt_aside_menu" className="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
       <ul className="menu-nav">
-        {_.map(menu, menuItem => <MenuItem title={menuItem.title} key={menuItem.id} path={menuItem.path} isActive={pathname === menuItem.path} />)}
+        {_.map(menu, menuItem => <MenuItem title={menuItem.title} key={menuItem.id} path={menuItem.path} isActive={pathname === menuItem.path} icon={menuItem.icon}/>)}
       </ul>
     </div>
   </div >
