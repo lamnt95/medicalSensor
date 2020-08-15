@@ -16,6 +16,11 @@ const menu = [
     path: "/member/:memberId",
   },
   {
+    id: "addMember",
+    title: "회원 관리 등록/수정",
+    path: "/addMember",
+  },
+  {
     id: "statisticalData",
     title: "null",
     path: "/statisticalData",
