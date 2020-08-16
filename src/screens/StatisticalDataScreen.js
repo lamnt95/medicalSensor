@@ -8,6 +8,5 @@ export default function StatisticalDataScreen() {
     <div className="d-flex mt-10 pl-8 pr-8 flex-column">
       <GroupStatistics />
     </div>
-    <div>StatisticalDataScreen</div>
   </>
 }

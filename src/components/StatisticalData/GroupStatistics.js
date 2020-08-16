@@ -1,6 +1,6 @@
 import React from "react"
 import PieChart from "./PieChart"
-import ColumnChart from "./ColumnChart"
+import JobChart from "./JobChart"
 
 const series2 = [{
   name: 'Brands',
@@ -70,7 +70,7 @@ export default function GroupStatistics() {
         <PieChart titleChart="통증 위치 통계" series={series3} />
       </div>
       <div className="mt-20">
-        <ColumnChart titleChart="직업 통계" />
+        <JobChart titleChart="직업 통계" />
       </div>
     </div>
   </div>
