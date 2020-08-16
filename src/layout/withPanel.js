@@ -22,7 +22,7 @@ const menu = [
   },
   {
     id: "statisticalData",
-    title: "null",
+    title: "기본 통계",
     path: "/statisticalData",
   },
   {
