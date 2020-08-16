@@ -31,11 +31,10 @@ const menu = [
 
 function MenuItem(props) {
   const { title, path, isActive, icon } = props || {}
-  // const router = useHistory();
+  const router = useHistory();
 
   const onClickItem = () => {
-    console.log(title, path)
-    // router.push(path)
+    router.push(path)
   }
   const liClass = isActive ? "menu-item menu-item-active" : "menu-item"
   const iconClass = `fa fa-${icon || ""} text-primary icon-md`

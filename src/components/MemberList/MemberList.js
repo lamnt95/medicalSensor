@@ -1,5 +1,6 @@
 import React from "react"
 import _ from "lodash"
+import { useHistory } from "react-router-dom"
 
 const data = [
   {
@@ -31,6 +32,33 @@ const data = [
   }
 ]
 
+function MemberItem(props) {
+  const { item } = props
+  const router = useHistory();
+
+  const handleClickItem = () => {
+    router.push(`/member/${item.id}`)
+  }
+
+  return <tr>
+    <th scope="row">
+      <label class="checkbox">
+        <input type="checkbox" name="phone" />
+        <span></span>
+      </label>
+    </th>
+    <td>{item.no}</td>
+    <td>{item.name}</td>
+    <td>{item.email}</td>
+    <td>{item.phone}</td>
+    <td>{item.joinDate}</td>
+    <td>{item.loginDate}</td>
+    <td>
+      <button type="button" class="btn btn-link" onClick={handleClickItem}>자세히</button>
+    </td>
+  </tr>
+}
+
 export default function MemberList() {
   return <table class="table table-bordered table-hover bg-white mt-10">
     <thead>
@@ -46,23 +74,7 @@ export default function MemberList() {
       </tr>
     </thead>
     <tbody>
-      {_.isEmpty(data) ? null : _.map(data, item => <tr>
-        <th scope="row">
-          <label class="checkbox">
-            <input type="checkbox" name="phone" />
-            <span></span>
-          </label>
-        </th>
-        <td>{item.no}</td>
-        <td>{item.name}</td>
-        <td>{item.email}</td>
-        <td>{item.phone}</td>
-        <td>{item.joinDate}</td>
-        <td>{item.loginDate}</td>
-        <td>
-          <button type="button" class="btn btn-link">자세히</button>
-        </td>
-      </tr>)}
+      {_.isEmpty(data) ? null : _.map(data, item => <MemberItem item={item} key={item.id} />)}
     </tbody>
   </table>
 }

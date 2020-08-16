@@ -1,6 +1,14 @@
 import React from "react"
+import { useHistory } from "react-router-dom"
 
 export default function LoginScreen() {
+
+  const router = useHistory();
+
+  const handleClickSignIn = () => {
+    router.push("/member")
+  }
+
   return <div className="d-flex flex-column flex-root">
     <div className="login login-4 login-signin-on d-flex flex-row-fluid" id="kt_login">
       <div className="d-flex flex-center flex-row-fluid bgi-size-cover bgi-position-top bgi-no-repeat" style={{ backgroundImage: "url('assets/media/bg/bg-3.jpg')" }}>
@@ -30,7 +38,7 @@ export default function LoginScreen() {
                 </div>
                 <a href="javascript:;" id="kt_login_forgot" className="text-muted text-hover-primary">Forget Password ?</a>
               </div>
-              <button id="kt_login_signin_submit" className="btn btn-primary font-weight-bold px-9 py-4 my-3 mx-4">Sign In</button>
+              <button id="kt_login_signin_submit" className="btn btn-primary font-weight-bold px-9 py-4 my-3 mx-4" onClick={handleClickSignIn}>Sign In</button>
             </form>
             <div className="mt-10">
               <span className="opacity-70 mr-4">Don't have an account yet?</span>

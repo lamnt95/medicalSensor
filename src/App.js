@@ -10,7 +10,7 @@ import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
 function App() {
   return <BrowserRouter>
     <Switch>
-      <Route path="/" component={() => <div>Home</div>} exact />
+      <Route path="/" component={LoginPage} exact />
       <Route path="/login" component={LoginPage} exact />
       <Route path="/member" component={MemberListPage} exact />
       <Route path="/member/:memberId" component={MemberPage} exact />

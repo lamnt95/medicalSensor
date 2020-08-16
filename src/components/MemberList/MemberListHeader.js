@@ -53,9 +53,19 @@ export default function MemberListHeader(props) {
         </div>
       </div>
       <div className="d-flex align-items-center">
-        <a className="btn btn-default font-weight-bold btn-sm px-3 font-size-base" onClick={handleCancel}>검색</a>
+        <a className="btn btn-default font-weight-bold btn-sm px-3 font-size-base" onClick={handleCancel}>
+          <i class="fa fa-window-close mr-2"></i>
+          <span>
+            검색
+          </span>
+        </a>
         <div className="btn-group ml-7">
-          <button type="button" className="btn btn-primary font-weight-bold btn-sm px-3 font-size-base" onClick={handleSubmit}>초기화</button>
+          <a className="btn btn-primary font-weight-bold btn-sm px-3 font-size-base" onClick={handleSubmit}>
+            <i class="fa fa-check-circle mr-2"></i>
+            <span>
+              초기화
+          </span>
+          </a>
         </div>
       </div>
     </div>
