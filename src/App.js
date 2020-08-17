@@ -7,6 +7,7 @@ import MemberPage from "./page/MemberPage"
 import AddMemberPage from "./page/AddMemberPage"
 import StatisticalDataPage from "./page/StatisticalDataPage"
 import BasicStatisticsPage from "./page/BasicStatisticsPage"
+import ComprehensiveStatisticsPage from "./page/ComprehensiveStatisticsPage"
 import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Route path="/addMember" component={AddMemberPage} exact />
       <Route path="/statisticalData" component={StatisticalDataPage} exact />
       <Route path="/basicStatistics" component={BasicStatisticsPage} exact />
+      <Route path="/comprehensiveStatistics" component={ComprehensiveStatisticsPage} exact />
     </Switch>
   </BrowserRouter>
 }

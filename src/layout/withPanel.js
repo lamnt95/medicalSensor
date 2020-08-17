@@ -32,7 +32,7 @@ const menu = [
   },
   {
     id: "comprehensiveStatistics",
-    title: "null",
+    title: "종합 통계",
     path: "/comprehensiveStatistics",
   }
 ]
